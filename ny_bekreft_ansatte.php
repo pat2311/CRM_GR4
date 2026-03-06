@@ -3,16 +3,16 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-03 11:11:30
+ * @Last Modified time: 2026-03-06 13:05:27
  */
 
 
 //Henter oppkoblingen til databasen
 include 'connect.php';
 
-if(isset($_GET['ny_ansatt']) AND ($_SERVER['REQUEST_METHOD'] == 'GET')) // Sjekker om knappen "ny_ansatt" er trykket og at formen er sendt med GET-metoden
+if(isset($_GET['ny_ansatte']) AND ($_SERVER['REQUEST_METHOD'] == 'GET')) // Sjekker om knappen "ny_ansatt" er trykket og at formen er sendt med GET-metoden
     {
-    $ansatt_id = $_GET['ansatt_id'];
+    // $ansatt_id = $_GET['ansatt_id'];
     $navn = $_GET['navn'];
     $etternavn = $_GET['etternavn'];
     $telefonnummer = $_GET['telefonnummer'];
