@@ -1,7 +1,6 @@
 <?php
-
+// Inkluderer database-tilkoblingsfilen for å koble til databasen
 include "connect.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -9,18 +8,21 @@ include "connect.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunder</title>
+    <title>Legg til kunde</title>
 </head>
 <body>
 
+<!-- Inkluderer meny-filen for navigasjon -->
 <?php include 'menu.php'?>
 
+<!-- Header-seksjon med beskrivelse av siden -->
 <header>
 <p>Her kan du legge til nye kunder</p>
 </header>
 
+<!-- Hovedinnhold med skjema for å legge til ny kunde -->
 <main>
-<from action="kunder_new_confirm.php" method="get">
+<form action="kunder_ny_bekreft.php" method="get">
 
 <label for="kunde_id">Kunde ID:</label><br>
 <input type="text" id="kunde_id" name="kunde_id"><br>
@@ -43,7 +45,7 @@ include "connect.php";
 <label for="by">By:</label><br>
 <input type="text" id="by" name="by"><br><br>
 
-<input type="submit" name="kunder" id="kunder" value="Legg til kunde">
+<input type="submit" name="kunder_new" id="kunder_new" value="Legg til kunde">
 
 </form>
 

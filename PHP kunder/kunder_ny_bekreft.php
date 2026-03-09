@@ -1,9 +1,11 @@
 <?php
+// Inkluderer database-tilkoblingsfilen
+include "connect.php";
 
- include "connect.php";
-
- if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
+// Sjekker om skjemaet er sendt og metoden er GET
+if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
     {
+        // Henter data fra GET-parametere
         $kunde_id = $_GET['kunde_id'];
         $bedrift_navn = $_GET['bedrift_navn'];
         $telefonnummer = $_GET['telefonnummer'];
@@ -12,6 +14,7 @@
         $postnummer = $_GET['postnummer'];
         $by = $_GET['by'];
 
+        // Sjekker om kunden allerede finnes
         $sql = "Select * From Kunder where kunde_id = :kunde_id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':kunde_id', $kunde_id);
@@ -19,11 +22,12 @@
 
         $kunde = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        // Skriver ut rådata for debugging
         print_r($kunde);
 
+        // Hvis kunden ikke finnes, legg til ny
         if(!$kunde)
             {
-
             $sql = "INSERT INTO kunder (kunde_id, bedrift_navn, telefonnummer, epost, adresse, postnummer, by)
             VALUES (:kunde_id, :bedrift_navn, :telefonnummer, :epost, :adresse, :postnummer, :by)";
 
@@ -40,13 +44,13 @@
 
         else
             {
-                $stmt =0;
+                $stmt =0; // Setter stmt til 0 hvis kunden finnes
             }
     }
 
     else
     {
-        $stmt = 0;
+        $stmt = 0; // Setter stmt til 0 hvis ikke sendt
     }
     ?>
 
@@ -55,17 +59,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>kunder</title>
+        <title>Bekreftelse</title>
     </head>
     <body>
+        <!-- Inkluderer meny-filen -->
         <?php include 'menu.php'?>
 
+        <!-- Header-seksjon -->
         <header>
            <p>Her kan du legge til nye kunder</p>
         </header>
 
+        <!-- Hovedinnhold med bekreftelsesmelding -->
         <main>
             <?php
+            // Viser melding basert på om innsettingen lyktes
             if($stmt)
                 {
                     echo "Kunden er lagt til i databasen";

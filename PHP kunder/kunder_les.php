@@ -1,14 +1,19 @@
 <?php
-
+// Inkluderer database-tilkoblingsfilen for å koble til databasen
 include "connect.php";
 
+// Utfører en SQL-spørring for å hente alle kunder fra tabellen 'Kunder'
 $sql = "SELECT * FROM Kunder";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
+// Henter alle resultater som en assosiativ array
 $CRM_GR4 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-print_r($CRM_GR4);
+// Skriver ut rådata for debugging (kan fjernes i produksjon)
+// print_r($CRM_GR4);
+
+// Løkke gjennom hver kunde og skriver ut detaljer
 foreach($CRM_GR4 as $kunder)
     {
         echo "kunde ID: " . $kunder['kunde_id'] . "<br>";
@@ -19,7 +24,6 @@ foreach($CRM_GR4 as $kunder)
         echo "Postnummer: " . $kunder['postnummer'] . "<br>";
         echo "By: " . $kunder['by'] . "<br><br>";
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -27,30 +31,34 @@ foreach($CRM_GR4 as $kunder)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kunder</title>
+    <title>Kunder</title>
 </head>
 <body>
 
+    <!-- Inkluderer meny-filen for navigasjon -->
     <?php include 'menu.php'?>
 
+    <!-- Header-seksjon med beskrivelse av siden -->
     <header>
     <p>Her kan du se alle kundene i databasen</p>
     </header>
 
+    <!-- Hovedinnhold med tabell for å vise kundeliste -->
     <main>
         <table>
             <thead>
                 <tr>
-                    <th>kunde_ID</th>
-                    <th>Bedrift navn</th>
+                    <th>Kunde-ID</th>
+                    <th>Bedriftsnavn</th>
                     <th>Telefonnummer</th>
-                    <th>Email</th>
+                    <th>E-post</th>
                     <th>Adresse</th>
                     <th>Postnummer</th>
-                    <th>by</th>
+                    <th>By</th>
                 </tr>
             </thead>
             <tbody>
+                <!-- Løkke gjennom hver kunde og viser data i tabellrader -->
                 <?php foreach($CRM_GR4 as $kunder): ?>
                     <tr>
                         <td><?php echo $kunder['kunde_id']; ?></td>
