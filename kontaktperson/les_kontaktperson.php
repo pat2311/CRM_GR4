@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:35
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-06 13:44:48
+ * @Last Modified time: 2026-03-13 13:22:28
  */
 
 
@@ -25,14 +25,14 @@ $kontaktperson = $stmt->fetchAll(PDO::FETCH_ASSOC); //Henter ut alle rader fra $
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>kontaktperson</title>
 </head>
 <body>
     <?php include '../meny.php'; ?>
 
     <header>
-        <p>VIS ALLE kontaktperson</p>
+        <p>VIS ALLE KONTAKTPERSONER</p>
     </header>    
 
     <main>
@@ -41,9 +41,10 @@ $kontaktperson = $stmt->fetchAll(PDO::FETCH_ASSOC); //Henter ut alle rader fra $
                 <th>Kontakt-ID</th>
                 <th>Navn</th>
                 <th>Etternavn</th>
+                <th>Stilling</th>
                 <th>Telefonnummer</th>
                 <th>E-post/mail</th>
-                <th>kunde_id</th>
+                <th>Kunde_id</th>
                 <th>Rediger</th>
                 <th>Slett</th>
             </thead>
@@ -54,10 +55,11 @@ $kontaktperson = $stmt->fetchAll(PDO::FETCH_ASSOC); //Henter ut alle rader fra $
                         <td><?php echo htmlspecialchars($kontakt['kontakt_id']); ?> </td>
                         <td><?php echo htmlspecialchars($kontakt['navn']); ?> </td>
                         <td><?php echo htmlspecialchars($kontakt['etternavn']); ?> </td>
+                        <td><?php echo htmlspecialchars($kontakt['stilling']); ?> </td>
                         <td><?php echo htmlspecialchars($kontakt['telefonnummer']); ?> </td>
                         <td><?php echo htmlspecialchars($kontakt['epost']); ?> </td>
                         <td><?php echo htmlspecialchars($kontakt['kunde_id']); ?> </td>
-                        <td><a href="rediger_kontaktperson.php?kontakt_id=<?php echo htmlspecialchars($kontakt['kontakt_id']); ?> ">Rediger</a></td>
+                        <td><a id="rediger" href="rediger_kontaktperson.php?kontakt_id=<?php echo htmlspecialchars($kontakt['kontakt_id']); ?> ">Rediger</a></td>
                         <td><a id="slett" href="slett_kontaktperson.php?kontakt_id=<?php echo htmlspecialchars($kontakt['kontakt_id']); ?> ">Slett</a></td>
                     </tr>
                 <?php } ?>

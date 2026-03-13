@@ -3,18 +3,19 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-06 13:45:14
+ * @Last Modified time: 2026-03-13 13:24:46
  */
 
 
 //Henter oppkoblingen til databasen
-include 'connect.php';
+include '../connect.php';
 
 if(isset($_GET['ny_kontaktperson']) AND ($_SERVER['REQUEST_METHOD'] == 'GET')) // Sjekker om knappen "ny_kontakt" er trykket og at formen er sendt med GET-metoden
     {
     // $kontakt_id = $_GET['kontakt_id'];
     $navn = $_GET['navn'];
     $etternavn = $_GET['etternavn'];
+    $stilling = $_GET['stilling'];
     $telefonnummer = $_GET['telefonnummer'];
     $epost = $_GET['epost'];
     $kunde_id = $_GET['kunde_id'];
@@ -32,16 +33,17 @@ if(isset($_GET['ny_kontaktperson']) AND ($_SERVER['REQUEST_METHOD'] == 'GET')) /
     if (!$kontakt)
         {
 
-        $sql = "INSERT INTO kontaktperson (kontakt_id, navn, etternavn, telefonnummer, epost, kunde_id)
-                VALUES (:kontakt_id, :navn, :etternavn, :telefonnummer, :epost, :kunde_id)"; // SQL-kode for å sette inn en ny kontakt i tabellen "kontaktperson" med verdiene som er skrevet inn i formen
+        $sql = "INSERT INTO kontaktperson (kontakt_id, navn, etternavn, stilling, telefonnummer, epost)
+                VALUES (:kontakt_id, :navn, :etternavn, :stilling, :telefonnummer, :epost)"; // SQL-kode for å sette inn en ny kontakt i tabellen "kontaktperson" med verdiene som er skrevet inn i formen
 
         $stmt = $pdo->prepare($sql); // Forbereder SQL-koden for kjøring
         $stmt->bindParam(":kontakt_id",$kontakt_id);
         $stmt->bindParam(":navn",$navn);
         $stmt->bindParam(":etternavn",$etternavn);
+        $stmt->bindParam(":stilling",$stilling);
         $stmt->bindParam(":telefonnummer",$telefonnummer);
         $stmt->bindParam(":epost",$epost);
-        $stmt->bindParam(":kunde_id",$kunde_id);
+        // $stmt->bindParam(":kunde_id",$kunde_id);
         $stmt->execute(); // Kjører SQL-koden og legger resultatet i $stmt
         }
     else
@@ -61,14 +63,14 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Min kontakt</title>
 </head>
 <body>
     <?php include '../meny.php'; ?>
 
     <header>
-        <p>REGISTRER NY kontakt</p>
+        <p>REGISTRER NY KONTAKT</p>
     </header>
     
     <main>
