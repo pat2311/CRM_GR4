@@ -1,4 +1,11 @@
 <?php
+/**
+ * @Author: Sep-aa
+ * @Date:   2026-03-13 13:35:14
+ * @Last Modified by:   Sep-aa
+ * @Last Modified time: 2026-03-13 13:39:01
+ */
+
 // Inkluderer database-tilkoblingsfilen for å koble til databasen
 include "connect.php";
 ?>
@@ -27,8 +34,8 @@ include "connect.php";
 <label for="kunde_id">Kunde ID:</label><br>
 <input type="text" id="kunde_id" name="kunde_id"><br>
 
-<label for="bedrift_navn">Bedrift navn:</label><br>
-<input type="text" id="bedrift_navn" name="bedrift_navn"><br>
+<label for="bedriftnavn">Bedrift navn:</label><br>
+<input type="text" id="bedriftnavn" name="bedriftnavn"><br>
 
 <label for="telefonnummer">Telefonnummer:</label><br>
 <input type="text" id="telefonnummer" name="telefonnummer"><br>

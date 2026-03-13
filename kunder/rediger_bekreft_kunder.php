@@ -1,4 +1,11 @@
 <?php
+/**
+ * @Author: Sep-aa
+ * @Date:   2026-03-13 13:35:14
+ * @Last Modified by:   Sep-aa
+ * @Last Modified time: 2026-03-13 13:39:07
+ */
+
 // Inkluderer database-tilkoblingsfilen
 include 'connect.php';
 
@@ -7,7 +14,7 @@ if(isset($_GET['kunder_edit']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
     {
         // Henter data fra GET-parametere
         $kunde_id = $_GET['kunde_id'];
-        $bedrift_navn = $_GET['bedrift_navn'];
+        $bedriftnavn = $_GET['bedriftnavn'];
         $telefonnummer = $_GET['telefonnummer'];
         $epost = $_GET['epost'];
         $adresse = $_GET['adresse'];
@@ -15,11 +22,11 @@ if(isset($_GET['kunder_edit']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
         $by = $_GET['by'];
 
         // Oppdaterer kunde-data i databasen
-    $sql = "UPDATE Kunder SET bedrift_navn = :bedrift_navn, telefonnummer = :telefonnummer, epost = :epost, adresse = :adresse, postnummer = :postnummer, by = :by
+    $sql = "UPDATE kunder SET bedriftnavn = :bedriftnavn, telefonnummer = :telefonnummer, epost = :epost, adresse = :adresse, postnummer = :postnummer, by = :by
             WHERE kunde_id = :kunde_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":kunde_id",$kunde_id);
-    $stmt->bindParam(":bedrift_navn",$bedrift_navn);
+    $stmt->bindParam(":bedriftnavn",$bedriftnavn);
     $stmt->bindParam(":telefonnummer",$telefonnummer);
     $stmt->bindParam(":epost",$epost);
     $stmt->bindParam(":adresse",$adresse);

@@ -1,4 +1,11 @@
 <?php
+/**
+ * @Author: Sep-aa
+ * @Date:   2026-03-13 13:35:14
+ * @Last Modified by:   Sep-aa
+ * @Last Modified time: 2026-03-13 13:40:04
+ */
+
 // Inkluderer database-tilkoblingsfilen
 include 'connect.php';
 
@@ -8,7 +15,7 @@ if(isset($_GET['slett_kunde']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     $kunde_id = $_GET['kunde_id'];
     
     // Sletter kunden fra databasen
-    $sql = "DELETE FROM Kunder WHERE kunde_id = :kunde_id";
+    $sql = "DELETE FROM kunder WHERE kunde_id = :kunde_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":kunde_id", $kunde_id);
     $stmt->execute();
