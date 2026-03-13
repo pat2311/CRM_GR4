@@ -1,9 +1,16 @@
 <?php
-// Inkluderer database-tilkoblingsfilen for å koble til databasen
-include "connect.php";
+/**
+ * @Author: Sep-aa
+ * @Date:   2026-03-13 13:35:14
+ * @Last Modified by:   Sep-aa
+ * @Last Modified time: 2026-03-13 13:38:56
+ */
 
-// Utfører en SQL-spørring for å hente alle kunder fra tabellen 'Kunder'
-$sql = "SELECT * FROM Kunder";
+// Inkluderer database-tilkoblingsfilen for å koble til databasen
+include "../connect.php";
+
+// Utfører en SQL-spørring for å hente alle kunder fra tabellen 'kunder'
+$sql = "SELECT * FROM kunder";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
@@ -17,7 +24,7 @@ $CRM_GR4 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach($CRM_GR4 as $kunder)
     {
         echo "kunde ID: " . $kunder['kunde_id'] . "<br>";
-        echo "Bedrift navn: " . $kunder['bedrift_navn'] . "<br>";
+        echo "Bedrift navn: " . $kunder['bedriftnavn'] . "<br>";
         echo "Telefonnummer: " . $kunder['telefonnummer'] . "<br>";
         echo "Email: " . $kunder['epost'] . "<br>";
         echo "Adresse: " . $kunder['adresse'] . "<br><br>";
@@ -31,7 +38,7 @@ foreach($CRM_GR4 as $kunder)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunder</title>
+    <title>kunder</title>
 </head>
 <body>
 
@@ -62,7 +69,7 @@ foreach($CRM_GR4 as $kunder)
                 <?php foreach($CRM_GR4 as $kunder): ?>
                     <tr>
                         <td><?php echo $kunder['kunde_id']; ?></td>
-                        <td><?php echo $kunder['bedrift_navn']; ?></td>
+                        <td><?php echo $kunder['bedriftnavn']; ?></td>
                         <td><?php echo $kunder['telefonnummer']; ?></td>
                         <td><?php echo $kunder['epost']; ?></td>
                         <td><?php echo $kunder['adresse']; ?></td>

@@ -1,3 +1,10 @@
+<?php
+/**
+ * @Author: Sep-aa
+ * @Date:   2026-03-13 13:35:14
+ * @Last Modified by:   Sep-aa
+ * @Last Modified time: 2026-03-13 13:40:03
+ */
 <?
 
 // Inkluderer database-tilkoblingsfilen
@@ -44,8 +51,8 @@ if(isset($_GET['kunde_id']))
         <label for="kunde_id">Kunde ID</label>
         <input type="text" name="kunde_id" id="kunde_id" value="<?php echo htmlspecialchars($kunder['kunde_id']); ?>" readonly required> <br><br>
 
-        <label for="bedrift_navn">Bedriftnavn</label>
-        <input type="text" name="bedrift_navn" id="bedrift_navn" value="<?php echo htmlspecialchars($kunder['bedrift_navn']); ?>" required> <br><br>
+        <label for="bedriftnavn">Bedriftnavn</label>
+        <input type="text" name="bedriftnavn" id="bedriftnavn" value="<?php echo htmlspecialchars($kunder['bedriftnavn']); ?>" required> <br><br>
 
         <label for="telefonnummer">Telefonnummer</label>
         <input type="text" name="telefonnummer" id="telefonnummer" value="<?php echo htmlspecialchars($kunder['telefonnummer']); ?>" required> <br><br>

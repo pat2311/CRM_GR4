@@ -1,4 +1,11 @@
 <?php
+/**
+ * @Author: Sep-aa
+ * @Date:   2026-03-13 13:35:14
+ * @Last Modified by:   Sep-aa
+ * @Last Modified time: 2026-03-13 13:40:08
+ */
+
 // Inkluderer database-tilkoblingsfilen
 include 'connect.php';
 
@@ -8,7 +15,7 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     $kunde_id = $_GET['kunde_id'];
     
     // Henter kunde-data for å vise før sletting
-    $sql = "SELECT * FROM Kunder WHERE kunde_id = :kunde_id";
+    $sql = "SELECT * FROM kunder WHERE kunde_id = :kunde_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":kunde_id",$kunde_id);
     $stmt->execute();
@@ -42,8 +49,8 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
         <label for="kunde_id">Kunde ID</label> <br>
         <input type="text" name="kunde_id" id="kunde_id" value="<?php echo htmlspecialchars($kunde['kunde_id']); ?>" readonly required> <br><br>
 
-        <label for="bedrift_navn">Bedriftsnavn</label> <br>
-        <input type="text" name="bedrift_navn" id="bedrift_navn" value="<?php echo htmlspecialchars($kunde['bedrift_navn']); ?>" readonly required> <br><br>
+        <label for="bedriftnavn">Bedriftsnavn</label> <br>
+        <input type="text" name="bedriftnavn" id="bedriftnavn" value="<?php echo htmlspecialchars($kunde['bedriftnavn']); ?>" readonly required> <br><br>
 
         <label for="telefonnummer">Telefonnummer</label> <br>
         <input type="text" name="telefonnummer" id="telefonnummer" value="<?php echo htmlspecialchars($kunde['telefonnummer']); ?>" readonly required> <br><br>

@@ -1,4 +1,11 @@
 <?php
+/**
+ * @Author: Sep-aa
+ * @Date:   2026-03-13 13:35:14
+ * @Last Modified by:   Sep-aa
+ * @Last Modified time: 2026-03-13 13:39:59
+ */
+
 // Inkluderer database-tilkoblingsfilen
 include "connect.php";
 
@@ -7,7 +14,7 @@ if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
     {
         // Henter data fra GET-parametere
         $kunde_id = $_GET['kunde_id'];
-        $bedrift_navn = $_GET['bedrift_navn'];
+        $bedriftnavn = $_GET['bedriftnavn'];
         $telefonnummer = $_GET['telefonnummer'];
         $epost = $_GET['epost'];
         $adresse = $_GET['adresse'];
@@ -15,7 +22,7 @@ if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         $by = $_GET['by'];
 
         // Sjekker om kunden allerede finnes
-        $sql = "Select * From Kunder where kunde_id = :kunde_id";
+        $sql = "Select * From kunder where kunde_id = :kunde_id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':kunde_id', $kunde_id);
         $stmt->execute();
@@ -28,12 +35,12 @@ if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         // Hvis kunden ikke finnes, legg til ny
         if(!$kunde)
             {
-            $sql = "INSERT INTO kunder (kunde_id, bedrift_navn, telefonnummer, epost, adresse, postnummer, by)
-            VALUES (:kunde_id, :bedrift_navn, :telefonnummer, :epost, :adresse, :postnummer, :by)";
+            $sql = "INSERT INTO kunder (kunde_id, bedriftnavn, telefonnummer, epost, adresse, postnummer, by)
+            VALUES (:kunde_id, :bedriftnavn, :telefonnummer, :epost, :adresse, :postnummer, :by)";
 
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':kunde_id', $kunde_id);
-            $stmt->bindParam(':bedrift_navn', $bedrift_navn);
+            $stmt->bindParam(':bedriftnavn', $bedriftnavn);
             $stmt->bindParam(':telefonnummer', $telefonnummer);
             $stmt->bindParam(':epost', $epost);
             $stmt->bindParam(':adresse', $adresse);
