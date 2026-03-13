@@ -8,7 +8,7 @@
 
 
 //Henter oppkoblingen til databasen
-include 'connect.php';
+include '../connect.php';
 
 if(isset($_GET['rediger_ansatte']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     {
@@ -44,11 +44,11 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Tittel</title>
 </head>
 <body>
-    <?php include 'meny.php'; ?>
+    <?php include '../meny.php'; ?>
 
     <header>
         <p>REDIGER ANSATTE</p>

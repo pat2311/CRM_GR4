@@ -3,13 +3,13 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:35
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-06 13:45:23
+ * @Last Modified time: 2026-03-13 13:25:09
  */
 
 
 
 //Henter oppkoblingen til databasen
-include 'connect.php';
+include '../connect.php';
 
 ?>
 
@@ -18,7 +18,7 @@ include 'connect.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Tittel</title>
 </head>
 <body>
@@ -40,6 +40,9 @@ include 'connect.php';
         <label for="etternavn">Etternavn</label> <br>
         <input type="text" name="etternavn" id="etternavn" required> <br><br>
 
+        <label for="stilling">Stilling</label> <br>
+        <input type="text" name="stilling" id="stilling" required> <br><br>
+        
         <label for="telefonnummer">Telefonnummer</label> <br>
         <input type="number" name="telefonnummer" id="telefonnummer" required> <br><br>
 
@@ -47,7 +50,7 @@ include 'connect.php';
         <input type="email" name="epost" id="epost" required> <br><br>
 
         <label for="kunde_id">kunde_id</label> <br>
-        <input type="text" name="kunde_id" id="kunde_id" required> <br><br>
+        <input type="text" name="kunde_id" id="kunde_id" readonly> <br><br>
 
         <input type="submit" name="ny_kontaktperson" id="ny_kontaktperson" value="Registrer"> <!-- submiter til ny_bekreft_kontaktperson.php -->
 

@@ -3,12 +3,12 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-06 13:41:13
+ * @Last Modified time: 2026-03-13 12:52:46
  */
 
 
 //Henter oppkoblingen til databasen
-include 'connect.php';
+include '../connect.php';
 
 if(isset($_GET['slett_kontaktperson']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     {
@@ -33,11 +33,11 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Tittel</title>
 </head>
 <body>
-    <?php include 'meny.php'; ?>
+    <?php include '../meny.php'; ?>
 
     <header>
         <p>SLETT kontakt</p>
@@ -47,11 +47,11 @@ else
         <?php
         if ($stmt)
             {
-            echo '<p> En bil er blitt slettet </p>';    
+            echo '<p> En kontaktperson er blitt slettet </p>';    
             }
         else
             {
-            echo '<p id="slett"> Det oppsto en feil! Bil ble ikke slettet </p>';
+            echo '<p id="slett"> Det oppsto en feil! Kontaktperson ble ikke slettet </p>';
             }        
 
         ?>

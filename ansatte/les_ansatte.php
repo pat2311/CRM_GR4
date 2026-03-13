@@ -3,12 +3,12 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:35
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-06 13:05:44
+ * @Last Modified time: 2026-03-13 13:19:25
  */
 
 
 //Henter oppkoblingen til databasen
-include 'connect.php';
+include '../connect.php';
 
 //Prosedyre for å lese fra databasen
 $sql = "SELECT * FROM ansatte"; //SQL-kode for å hente ut alle ansatte fra tabellen "ansatte"
@@ -25,11 +25,11 @@ $ansatte = $stmt->fetchAll(PDO::FETCH_ASSOC); //Henter ut alle rader fra $stmt o
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Ansatte</title>
 </head>
 <body>
-    <?php include 'meny.php'; ?>
+    <?php include '../meny.php'; ?>
 
     <header>
         <p>VIS ALLE ANSATTE</p>
@@ -57,7 +57,7 @@ $ansatte = $stmt->fetchAll(PDO::FETCH_ASSOC); //Henter ut alle rader fra $stmt o
                         <td><?php echo htmlspecialchars($ansatt['telefonnummer']); ?> </td>
                         <td><?php echo htmlspecialchars($ansatt['epost']); ?> </td>
                         <td><?php echo htmlspecialchars($ansatt['rolle']); ?> </td>
-                        <td><a href="rediger_ansatte.php?ansatt_id=<?php echo htmlspecialchars($ansatt['ansatt_id']); ?> ">Rediger</a></td>
+                        <td><a id="rediger" href="rediger_ansatte.php?ansatt_id=<?php echo htmlspecialchars($ansatt['ansatt_id']); ?> ">Rediger</a></td>
                         <td><a id="slett" href="slett_ansatte.php?ansatt_id=<?php echo htmlspecialchars($ansatt['ansatt_id']); ?> ">Slett</a></td>
                     </tr>
                 <?php } ?>

@@ -3,12 +3,12 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-06 13:43:10
+ * @Last Modified time: 2026-03-13 13:30:39
  */
 
 
 //Henter oppkoblingen til databasen
-include 'connect.php';
+include '../connect.php';
 
 if(isset($_GET['kontakt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     {
@@ -32,11 +32,11 @@ if(isset($_GET['kontakt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Tittel</title>
 </head>
 <body>
-    <?php include 'meny.php'; ?>
+    <?php include '../meny.php'; ?>
 
     <header>
         <p>Rediger kontaktperson</p>
@@ -54,6 +54,9 @@ if(isset($_GET['kontakt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
         <label for="etternavn">Etternavn</label> <br>
         <input type="text" name="etternavn" id="etternavn" value="<?php echo htmlspecialchars($kontakt['etternavn']); ?>" required> <br><br>
 
+        <label for="stilling">Stilling</label> <br>
+        <input type="text" name="stilling" id="stilling" value="<?php echo htmlspecialchars($kontakt['stilling']); ?>" required> <br><br>
+
         <label for="telefonnummer">Telefonnummer</label> <br>
         <input type="text" name="telefonnummer" id="telefonnummer" value="<?php echo htmlspecialchars($kontakt['telefonnummer']); ?>" required> <br><br>
 
@@ -61,7 +64,7 @@ if(isset($_GET['kontakt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
         <input type="text" name="epost" id="epost" value="<?php echo htmlspecialchars($kontakt['epost']); ?>" required> <br><br>
 
         <label for="kunde_id">kunde_id</label> <br>
-        <input type="text" name="kunde_id" id="kunde_id" value="<?php echo htmlspecialchars($kontakt['kunde_id']); ?>" required> <br><br>
+        <input type="text" name="kunde_id" id="kunde_id" value="<?php echo htmlspecialchars($kontakt['kunde_id']); ?>" readonly required> <br><br>
 
         <input type="submit" name="rediger_kontaktperson" id="rediger_kontaktperson" value="Lagre">
 
