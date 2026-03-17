@@ -69,7 +69,7 @@ foreach($CRM_GR4 as $kunder)
             </thead>
             <tbody>
                 <!-- Løkke gjennom hver kunde og viser data i tabellrader -->
-                <?php foreach($kunder as $kunde):
+                <?php foreach($kunder as $kunde)
                     {?>
                     <tr>
                         <td><?php echo $kunder['kunde_id']; ?></td>
