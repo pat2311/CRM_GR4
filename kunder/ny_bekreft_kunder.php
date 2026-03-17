@@ -20,6 +20,13 @@ if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         $postnummer = $_GET['postnummer'];
         $by = $_GET['by'];
 
+        echo "Bedrift navn: " . $bedriftnavn . "<br>";
+        echo "Telefonnummer: " . $telefonnummer . "<br>";
+        echo "mail: " . $mail . "<br>";
+        echo "Adresse: " . $adresse . "<br><br>";
+        echo "Postnummer: " . $postnummer . "<br>";
+        echo "By: " . $by . "<br><br>";
+
         // Sjekker om kunden allerede finnes
         $sql = "Select * From kunder where kunde_id = :kunde_id";
         $stmt = $pdo->prepare($sql);
