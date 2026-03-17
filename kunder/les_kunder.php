@@ -1,10 +1,4 @@
 <?php
-/**
- * @Author: Sep-aa
- * @Date:   2026-03-13 13:35:14
- * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-13 13:38:56
- */
 
 // Inkluderer database-tilkoblingsfilen for å koble til databasen
 include "../connect.php";
@@ -15,10 +9,10 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 // Henter alle resultater som en assosiativ array
-$CRM_GR4 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$kunder = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Skriver ut rådata for debugging (kan fjernes i produksjon)
-// print_r($CRM_GR4);
+// print_r($kunder);
 
 // Løkke gjennom hver kunde og skriver ut detaljer
 foreach($CRM_GR4 as $kunder)
@@ -38,12 +32,13 @@ foreach($CRM_GR4 as $kunder)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>kunder</title>
 </head>
 <body>
 
     <!-- Inkluderer meny-filen for navigasjon -->
-    <?php include 'menu.php'?>
+    <?php include '../meny.php'?>
 
     <!-- Header-seksjon med beskrivelse av siden -->
     <header>
@@ -62,11 +57,14 @@ foreach($CRM_GR4 as $kunder)
                     <th>Adresse</th>
                     <th>Postnummer</th>
                     <th>By</th>
+                    <th>Rediger</th>
+                    <th>Slett</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Løkke gjennom hver kunde og viser data i tabellrader -->
-                <?php foreach($CRM_GR4 as $kunder): ?>
+                <?php foreach($kunder as $kunde):
+                    {?>
                     <tr>
                         <td><?php echo $kunder['kunde_id']; ?></td>
                         <td><?php echo $kunder['bedriftnavn']; ?></td>
@@ -75,8 +73,10 @@ foreach($CRM_GR4 as $kunder)
                         <td><?php echo $kunder['adresse']; ?></td>
                         <td><?php echo $kunder['postnummer']; ?></td>
                         <td><?php echo $kunder['by']; ?></td>
+                        <td><a id="rediger" href="rediger_kunder.php?kunde_id=<?php echo htmlspecialchars($kunder['kunde_id']); ?>">Rediger</a></td>
+                        <td><a id="slett" href="slett_kunder.php?kunde_id=<?php echo htmlspecialchars($kunder['kunde_id']); ?>">Slett</a></td>
                     </tr>
-                <?php endforeach; ?>
+                <?php } ?>
             </tbody>
         </table>
     </main>

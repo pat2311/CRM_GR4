@@ -1,10 +1,4 @@
 <?php
-/**
- * @Author: Sep-aa
- * @Date:   2026-03-13 13:35:14
- * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-13 13:39:07
- */
 
 // Inkluderer database-tilkoblingsfilen
 include 'connect.php';
@@ -47,8 +41,8 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
-    <title>Bekreftelse</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <title> Rediger kunde - Bekreftelse</title>
 </head>
 <body>
     <!-- Inkluderer meny-filen -->

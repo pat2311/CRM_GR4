@@ -1,11 +1,4 @@
 <?php
-/**
- * @Author: Sep-aa
- * @Date:   2026-03-13 13:35:14
- * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-13 13:40:03
- */
-<?
 
 // Inkluderer database-tilkoblingsfilen
 include 'connect.php';
@@ -33,6 +26,7 @@ if(isset($_GET['kunde_id']))
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
         <title>Rediger kunde</title>
     </head>
     <body>
