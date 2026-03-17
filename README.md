@@ -1,6 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=rect&height=231&color=gradient&text=U%20V%20−%20g%20r%20u%20p%20p%20e%20o%20p%20p%20g%20a%20v%20e%20:%20%20%20C%20R%20M%20−%20s%20y%20s%20t%20e%20m%20%20%20(%20C%20R%20U%20D%20)&fontAlign=13!&fontSize=27)
+$${\color{white}UV-gruppeoppgave: \ CRM-system \ (CRUD)}$$ 
 ---
-✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪
+
 Et CRM-system (Customer Relationship Management) er en programvareløsning som hjelper bedrifter med å administrere og samhandle med kunder og potensielle kunder på en mer effektiv måte.
 CRM-systemer er designet for å samle, organisere, analysere og dele kundeinformasjon på tvers av forskjellige avdelinger innen en organisasjon, slik at man kan bygge bedre kunderelasjoner og øke salget.
 
