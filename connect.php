@@ -22,7 +22,7 @@ try
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     // echo "Oppkobling til databasen er OK!";
     }
-catch(PDOExeption $e) // Hvis det oppstår en feil i try-blokken, så vil koden hoppe til catch-blokken og kjøre den
+catch(PDOException $e) // Hvis det oppstår en feil i try-blokken, så vil koden hoppe til catch-blokken og kjøre den
     {
     die("Oppkonlingsfeil til MYSQL: ".$e->getMessage()."<br>");    
     }    
