@@ -21,7 +21,7 @@ $kunder = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // print_r($kunder);
 
 // Løkke gjennom hver kunde og skriver ut detaljer
-foreach($CRM_GR4 as $kunder)
+foreach($kunder as $kunder)
     {
         echo "kunde ID: " . $kunder['kunde_id'] . "<br>";
         echo "Bedrift navn: " . $kunder['bedriftnavn'] . "<br>";
