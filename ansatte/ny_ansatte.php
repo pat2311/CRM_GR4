@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:35
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-13 13:16:08
+ * @Last Modified time: 2026-03-17 09:16:01
  */
 
 
@@ -19,7 +19,7 @@ include '../connect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <title>Tittel</title>
+    <title>Registrer ansatt</title>
 </head>
 <body>
     <?php include '../meny.php'; ?>

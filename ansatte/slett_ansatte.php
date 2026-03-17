@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-13 13:16:17
+ * @Last Modified time: 2026-03-17 09:21:44
  */
 
 
@@ -20,9 +20,9 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     $stmt->bindParam(":ansatt_id",$ansatt_id);
     $stmt->execute();
 
-    $bil = $stmt->fetch(PDO::FETCH_ASSOC);
+    $ansatt = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    //print_r($bil);
+    //print_r($ansatt);
     }
 
 ?>
@@ -33,7 +33,7 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <title>TITTEL</title>
+    <title>Slett ansatt</title>
 </head>
 <body>
     <?php include '../meny.php'; ?>
@@ -43,27 +43,27 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     </header>
 
     <main>
-        <form action="slett_bekreft.php" method="get">
+        <form action="slett_bekreft_ansatte.php" method="get">
 
         <label for="ansatt_id">Ansatt ID</label> <br>
-        <input type="text" name="ansatt_id" id="ansatt_id" value="<?php echo htmlspecialchars($bil['ansatt_id']); ?>" readonly required> <br><br>
+        <input type="text" name="ansatt_id" id="ansatt_id" value="<?php echo htmlspecialchars($ansatt['ansatt_id']); ?>" readonly required> <br><br>
 
         <label for="navn">Navn</label> <br>
-        <input type="text" name="navn" id="navn" value="<?php echo htmlspecialchars($bil['navn']); ?>" readonly required> <br><br>
+        <input type="text" name="navn" id="navn" value="<?php echo htmlspecialchars($ansatt['navn']); ?>" readonly required> <br><br>
 
         <label for="etternavn">Etternavn</label> <br>
-        <input type="text" name="etternavn" id="etternavn" value="<?php echo htmlspecialchars($bil['etternavn']); ?>" readonly required> <br><br>
+        <input type="text" name="etternavn" id="etternavn" value="<?php echo htmlspecialchars($ansatt['etternavn']); ?>" readonly required> <br><br>
 
         <label for="telefonnummer">Telefonnummer</label> <br>
-        <input type="text" name="telefonnummer" id="telefonnummer" value="<?php echo htmlspecialchars($bil['telefonnummer']); ?>" readonly required> <br><br>
+        <input type="text" name="telefonnummer" id="telefonnummer" value="<?php echo htmlspecialchars($ansatt['telefonnummer']); ?>" readonly required> <br><br>
 
         <label for="epost">E-post</label> <br>
-        <input type="email" name="epost" id="epost" value="<?php echo htmlspecialchars($bil['epost']); ?>" readonly required> <br><br>
+        <input type="email" name="epost" id="epost" value="<?php echo htmlspecialchars($ansatt['epost']); ?>" readonly required> <br><br>
 
         <label for="rolle">Rolle</label> <br>
-        <input type="text" name="rolle" id="rolle" value="<?php echo htmlspecialchars($bil['rolle']); ?>" readonly required> <br><br>
+        <input type="text" name="rolle" id="rolle" value="<?php echo htmlspecialchars($ansatt['rolle']); ?>" readonly required> <br><br>
 
-        <input type="submit" name="slett_bil" id="slett" value="Slett">
+        <input type="submit" name="slett_ansatt" id="slett" value="Slett">
 
         </form>
 

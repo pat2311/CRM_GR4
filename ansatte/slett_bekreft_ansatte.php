@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-13 13:15:54
+ * @Last Modified time: 2026-03-17 09:20:11
  */
 
 
@@ -34,7 +34,7 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <title>Tittel</title>
+    <title>Bekreftelse</title>
 </head>
 <body>
     <?php include '../meny.php'; ?>
@@ -47,11 +47,11 @@ else
         <?php
         if ($stmt)
             {
-            echo '<p> En bil er blitt slettet </p>';    
+            echo '<p> En ansatt er blitt slettet </p>';    
             }
         else
             {
-            echo '<p id="slett"> Det oppsto en feil! Bil ble ikke slettet </p>';
+            echo '<p id="slett"> Det oppsto en feil! Ansatt ble ikke slettet </p>';
             }        
 
         ?>

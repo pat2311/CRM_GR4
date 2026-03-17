@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:06:56
+ * @Last Modified time: 2026-03-17 09:15:15
  */
 
 // Inkluderer database-tilkoblingsfilen
@@ -13,7 +13,7 @@ include "../connect.php";
 if(isset($_GET['ny_kunde']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
     {
         // Henter data fra GET-parametere
-        $kunde_id = $_GET['kunde_id'];
+        // $kunde_id = $_GET['kunde_id'];
         $bedriftnavn = $_GET['bedriftnavn'];
         $telefonnummer = $_GET['telefonnummer'];
         $epost = $_GET['epost'];
@@ -51,7 +51,7 @@ if(isset($_GET['ny_kunde']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
 
         else
             {
-                $stmt =0; // Setter stmt til 0 hvis kunden finnes
+                $stmt = 0; // Setter stmt til 0 hvis kunden finnes
             }
     }
 
@@ -67,7 +67,7 @@ if(isset($_GET['ny_kunde']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <title>Bekreftelse</title>
+        <title>Min kunde</title>
 
     </head>
     <body>

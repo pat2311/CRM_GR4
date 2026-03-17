@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 08:41:26
+ * @Last Modified time: 2026-03-17 09:18:44
  */
 
 
@@ -24,7 +24,7 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
         $kunder = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Skriver ut rådata for debugging
-        // print_r($kunder);
+        print_r($kunder);
     }
 
     ?>

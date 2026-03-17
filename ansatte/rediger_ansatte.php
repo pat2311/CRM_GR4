@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-13 13:16:13
+ * @Last Modified time: 2026-03-17 09:20:52
  */
 
 
@@ -22,7 +22,7 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
 
     $ansatt = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    //print_r($bil);
+    // print_r($bil);
     }
 
 ?>
@@ -33,7 +33,7 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <title>Tittel</title>
+    <title>Rediger ansatte</title>
 </head>
 <body>
     <?php include '../meny.php'; ?>
