@@ -28,41 +28,32 @@ if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         echo "By: " . $by . "<br><br>";
 
         // Sjekker om kunden allerede finnes
-        $sql = "Select * From kunder where kunde_id = :kunde_id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':kunde_id', $kunde_id);
-        $stmt->execute();
+        // $sql = "Select * From kunder where kunde_id = :kunde_id";
+        // $stmt = $pdo->prepare($sql);
+        // $stmt->bindParam(':kunde_id', $kunde_id);
+        // $stmt->execute();
 
-        $kunde = $stmt->fetch(PDO::FETCH_ASSOC);
+        // $kunde = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Skriver ut rådata for debugging
-        print_r($kunde);
+        // print_r($kunde);
 
         // Hvis kunden ikke finnes, legg til ny
-        if(!$kunde)
-            {
-            $sql = "INSERT INTO kunder (bedriftnavn, telefonnummer, mail, adresse, postnummer, by)
-            VALUES (:bedriftnavn, :telefonnummer, :mail, :adresse, :postnummer, :by)";
+       
+        $sql = "INSERT INTO kunder (bedriftnavn, telefonnummer, mail, adresse, postnummer, by)
+        VALUES (:bedriftnavn, :telefonnummer, :mail, :adresse, :postnummer, :by)";
 
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':bedriftnavn', $bedriftnavn);
-            $stmt->bindParam(':telefonnummer', $telefonnummer);
-            $stmt->bindParam(':mail', $mail);
-            $stmt->bindParam(':adresse', $adresse);
-            $stmt->bindParam(':postnummer', $postnummer);
-            $stmt->bindParam(':by', $by);
-            $stmt->execute();
-            }
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':bedriftnavn', $bedriftnavn);
+        $stmt->bindParam(':telefonnummer', $telefonnummer);
+        $stmt->bindParam(':mail', $mail);
+        $stmt->bindParam(':adresse', $adresse);
+        $stmt->bindParam(':postnummer', $postnummer);
+        $stmt->bindParam(':by', $by);
+        $stmt->execute();
+        
 
-        else
-            {
-                $stmt =0; // Setter stmt til 0 hvis kunden finnes
-            }
-    }
-
-    else
-    {
-        $stmt = 0; // Setter stmt til 0 hvis ikke sendt
+   
     }
     ?>
 
