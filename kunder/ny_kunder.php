@@ -33,7 +33,7 @@ include "../connect.php";
 <form action="ny_bekreft_kunder.php" method="get">
 
 <label for="kunde_id">Kunde ID:</label><br>
-<input type="text" id="kunde_id" name="kunde_id"><br>
+<input type="auto_increment" id="kunde_id" name="kunde_id"><br>
 
 <label for="bedriftnavn">Bedrift navn:</label><br>
 <input type="text" id="bedriftnavn" name="bedriftnavn"><br>
