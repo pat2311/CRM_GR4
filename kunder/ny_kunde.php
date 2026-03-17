@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:17:17
+ * @Last Modified time: 2026-03-17 09:56:53
  */
 
 // Inkluderer database-tilkoblingsfilen for å koble til databasen
@@ -20,7 +20,8 @@ include "../connect.php";
 </head>
 <body>
 <!-- Inkluderer meny-filen for navigasjon -->
-    <?php include '../menu.php'?>
+    <?php include '../meny.php'; ?>
+
 
 <!-- Header-seksjon med beskrivelse av siden -->
     <header>
@@ -29,7 +30,7 @@ include "../connect.php";
 
 <!-- Hovedinnhold med skjema for å legge til ny kunde -->
     <main>
-        <form action="ny_bekreft_kunder.php" method="get">
+        <form action="ny_bekreft_kunde.php" method="get">
 
         <!-- <label for="kunde_id">Kunde ID:</label><br>
         <input type="text" id="kunde_id" name="kunde_id" readonly><br> -->
@@ -49,8 +50,8 @@ include "../connect.php";
         <label for="postnummer">Postnummer:</label><br>
         <input type="text" name="postnummer" id="postnummer" required> <br><br>
 
-        <label for="by">By:</label><br>
-        <input type="text" name="by" id="by" required> <br><br>
+        <label for="city">By:</label><br>
+        <input type="text" name="city" id="city" required> <br><br>
 
         <input type="submit" name="ny_kunde" id="ny_kunde" value="Registrer">
 

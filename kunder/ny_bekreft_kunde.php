@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:15:15
+ * @Last Modified time: 2026-03-17 10:01:31
  */
 
 // Inkluderer database-tilkoblingsfilen
@@ -19,7 +19,7 @@ if(isset($_GET['ny_kunde']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         $epost = $_GET['epost'];
         $adresse = $_GET['adresse'];
         $postnummer = $_GET['postnummer'];
-        $by = $_GET['by'];
+        $city = $_GET['city'];
 
         // Sjekker om kunden allerede finnes
         $sql = "SELECT * FROM kunder WHERE kunde_id = :kunde_id";
@@ -35,8 +35,8 @@ if(isset($_GET['ny_kunde']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         // Hvis kunden ikke finnes, legg til ny
         if(!$kunde)
             {
-            $sql = "INSERT INTO kunder (kunde_id, bedriftnavn, telefonnummer, epost, adresse, postnummer, by)
-                    VALUES (:kunde_id, :bedriftnavn, :telefonnummer, :epost, :adresse, :postnummer, :by)";
+            $sql = "INSERT INTO kunder (kunde_id, bedriftnavn, telefonnummer, epost, adresse, postnummer, city)
+                    VALUES (:kunde_id, :bedriftnavn, :telefonnummer, :epost, :adresse, :postnummer, :city)";
 
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':kunde_id', $kunde_id);
@@ -45,7 +45,7 @@ if(isset($_GET['ny_kunde']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
             $stmt->bindParam(':epost', $epost);
             $stmt->bindParam(':adresse', $adresse);
             $stmt->bindParam(':postnummer', $postnummer);
-            $stmt->bindParam(':by', $by);
+            $stmt->bindParam(':city', $city);
             $stmt->execute();
             }
 
@@ -72,7 +72,7 @@ if(isset($_GET['ny_kunde']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
     </head>
     <body>
         <!-- Inkluderer meny-filen -->
-        <?php include '../menu.php'?>
+        <?php include '../meny.php'?>
 
         <!-- Header-seksjon -->
         <header>

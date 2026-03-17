@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 08:38:17
+ * @Last Modified time: 2026-03-17 09:54:23
  */
 
 // Inkluderer database-tilkoblingsfilen
@@ -37,7 +37,7 @@ else
 </head>
 <body>
     <!-- Inkluderer meny-filen -->
-    <?php include '../menu.php'; ?>
+    <?php include '../meny.php'; ?>
 
     <!-- Header-seksjon -->
     <header>

@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:20:11
+ * @Last Modified time: 2026-03-17 09:35:56
  */
 
 
@@ -20,13 +20,14 @@ if(isset($_GET['slett_ansatte']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":ansatt_id", $ansatt_id);
     $stmt->execute();
+
     }
 else
     {
     $stmt = 0;
-    
     }    
 
+    // print_r($ansatt);
 ?>
 <!DOCTYPE html>
 <html lang="en">

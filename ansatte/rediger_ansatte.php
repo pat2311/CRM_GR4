@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:20:52
+ * @Last Modified time: 2026-03-17 09:33:52
  */
 
 
@@ -22,7 +22,7 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
 
     $ansatt = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // print_r($bil);
+    print_r($ansatt);
     }
 
 ?>

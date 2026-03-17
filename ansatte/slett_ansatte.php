@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-03 10:19:36
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:21:44
+ * @Last Modified time: 2026-03-17 09:41:41
  */
 
 
@@ -22,7 +22,7 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
 
     $ansatt = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    //print_r($ansatt);
+    print_r($ansatt);
     }
 
 ?>
@@ -63,7 +63,7 @@ if(isset($_GET['ansatt_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
         <label for="rolle">Rolle</label> <br>
         <input type="text" name="rolle" id="rolle" value="<?php echo htmlspecialchars($ansatt['rolle']); ?>" readonly required> <br><br>
 
-        <input type="submit" name="slett_ansatt" id="slett" value="Slett">
+        <input type="submit" name="slett_ansatte" id="slett" value="Slett">
 
         </form>
 

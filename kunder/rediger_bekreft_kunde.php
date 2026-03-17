@@ -3,14 +3,14 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 08:42:05
+ * @Last Modified time: 2026-03-17 10:01:44
  */
 
 // Inkluderer database-tilkoblingsfilen
 include '../connect.php';
 
 // Sjekker om skjemaet for redigering er sendt
-if(isset($_GET['rediger_kunder']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
+if(isset($_GET['rediger_kunde']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
     {
         // Henter data fra GET-parametere
         $kunde_id = $_GET['kunde_id'];
@@ -19,10 +19,10 @@ if(isset($_GET['rediger_kunder']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
         $epost = $_GET['epost'];
         $adresse = $_GET['adresse'];
         $postnummer = $_GET['postnummer'];
-        $by = $_GET['by'];
+        $city = $_GET['city'];
 
         // Oppdaterer kunde-data i databasen
-    $sql = "UPDATE kunder SET bedriftnavn = :bedriftnavn, telefonnummer = :telefonnummer, epost = :epost, adresse = :adresse, postnummer = :postnummer, by = :by
+    $sql = "UPDATE kunder SET bedriftnavn = :bedriftnavn, telefonnummer = :telefonnummer, epost = :epost, adresse = :adresse, postnummer = :postnummer, city = :city
             WHERE kunde_id = :kunde_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":kunde_id",$kunde_id);
@@ -31,7 +31,7 @@ if(isset($_GET['rediger_kunder']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
     $stmt->bindParam(":epost",$epost);
     $stmt->bindParam(":adresse",$adresse);
     $stmt->bindParam(":postnummer",$postnummer);
-    $stmt->bindParam(":by",$by);
+    $stmt->bindParam(":city",$city);
     $stmt->execute();
     }
 else
@@ -52,7 +52,7 @@ else
 </head>
 <body>
     <!-- Inkluderer meny-filen -->
-    <?php include '../menu.php'; ?>
+    <?php include '../meny.php'; ?>
 
     <!-- Header-seksjon -->
     <header>

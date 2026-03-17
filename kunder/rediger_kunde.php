@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:18:44
+ * @Last Modified time: 2026-03-17 09:56:46
  */
 
 
@@ -38,7 +38,7 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
     </head>
     <body>
         <!-- Inkluderer meny-filen -->
-        <?php include '../menu.php'; ?>
+        <?php include '../meny.php'; ?>
         
         <!-- Header-seksjon -->
         <header>
@@ -47,7 +47,7 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
 
         <!-- Hovedinnhold med skjema for redigering -->
         <main>
-            <form action="rediger_bekreft_kunder.php" method="get">
+            <form action="rediger_bekreft_kunde.php" method="get">
 
             <label for="kunde_id">Kunde ID</label>
             <input type="text" name="kunde_id" id="kunde_id" value="<?php echo htmlspecialchars($kunder['kunde_id']); ?>" readonly required> <br><br>
@@ -67,10 +67,10 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
             <label for="postnummer">Postnummer</label>
             <input type="text" name="postnummer" id="postnummer" value="<?php echo htmlspecialchars($kunder['postnummer']); ?>" required> <br><br>
 
-            <label for="by">By</label>
-            <input type="text" name="by" id="by" value="<?php echo htmlspecialchars($kunder['by']); ?>" required> <br><br>
+            <label for="city">By</label>
+            <input type="text" name="city" id="city" value="<?php echo htmlspecialchars($kunder['city']); ?>" required> <br><br>
 
-            <input type="submit" name="rediger_kunder" id="rediger_kunder" value="Lagre">
+            <input type="submit" name="rediger_kunde" id="rediger_kunde" value="Lagre">
             
             </form>
 

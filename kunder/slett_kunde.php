@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 08:37:23
+ * @Last Modified time: 2026-03-17 10:02:33
  */
 
 // Inkluderer database-tilkoblingsfilen
@@ -31,12 +31,12 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Slett kunde</title>
 </head>
 <body>
     <!-- Inkluderer meny-filen -->
-    <?php include '../menu.php'; ?>
+    <?php include '../meny.php'; ?>
 
     <!-- Header-seksjon -->
     <header>
@@ -65,8 +65,8 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
         <label for="postnummer">Postnummer</label> <br>
         <input type="text" name="postnummer" id="postnummer" value="<?php echo htmlspecialchars($kunde['postnummer']); ?>" readonly required> <br><br>
 
-        <label for="by">By</label> <br>
-        <input type="text" name="by" id="by" value="<?php echo htmlspecialchars($kunde['by']); ?>" readonly required> <br><br>
+        <label for="city">By</label> <br>
+        <input type="text" name="city" id="city" value="<?php echo htmlspecialchars($kunde['city']); ?>" readonly required> <br><br>
 
         <input type="submit" name="slett_kunde" id="slett" value="Slett">
 

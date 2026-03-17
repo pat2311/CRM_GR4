@@ -3,7 +3,7 @@
  * @Author: Sep-aa
  * @Date:   2026-03-13 13:35:14
  * @Last Modified by:   Sep-aa
- * @Last Modified time: 2026-03-17 09:09:52
+ * @Last Modified time: 2026-03-17 09:57:00
  */
 
 // Inkluderer database-tilkoblingsfilen for å koble til databasen
@@ -29,7 +29,7 @@ $kunde = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //         echo "Email: " . $kunder['epost'] . "<br>";
 //         echo "Adresse: " . $kunder['adresse'] . "<br><br>";
 //         echo "Postnummer: " . $kunder['postnummer'] . "<br>";
-//         echo "By: " . $kunder['by'] . "<br><br>";
+//         echo "city: " . $kunder['city'] . "<br><br>";
 //     }
 ?>
 
@@ -76,7 +76,7 @@ $kunde = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $kunder['epost']; ?></td>
                         <td><?php echo $kunder['adresse']; ?></td>
                         <td><?php echo $kunder['postnummer']; ?></td>
-                        <td><?php echo $kunder['by']; ?></td>
+                        <td><?php echo $kunder['city']; ?></td>
                         <td><a id="rediger" href="rediger_kunde.php?kunde_id=<?php echo htmlspecialchars($kunder['kunde_id']); ?> ">Rediger</a></td>
                         <td><a id="slett" href="slett_kunde.php?kunde_id=<?php echo htmlspecialchars($kunder['kunde_id']); ?> ">Slett</a></td>
                     </tr>
