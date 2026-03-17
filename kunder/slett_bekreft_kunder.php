@@ -1,7 +1,13 @@
 <?php
+/**
+ * @Author: phantom-ghost-web
+ * @Date:   2026-03-03 21:19:13
+ * @Last Modified by:   phantom-ghost-web
+ * @Last Modified time: 2026-03-17 08:40:25
+ */
 
 // Inkluderer database-tilkoblingsfilen
-include 'connect.php';
+include '../connect.php';
 
 // Sjekker om skjemaet for sletting er sendt
 if(isset($_GET['slett_kunde']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
@@ -31,7 +37,7 @@ else
 </head>
 <body>
     <!-- Inkluderer meny-filen -->
-    <?php include 'menu.php'; ?>
+    <?php include '../menu.php'; ?>
 
     <!-- Header-seksjon -->
     <header>

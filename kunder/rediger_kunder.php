@@ -1,7 +1,13 @@
 <?php
+/**
+ * @Author: phantom-ghost-web
+ * @Date:   2026-03-03 20:59:20
+ * @Last Modified by:   phantom-ghost-web
+ * @Last Modified time: 2026-03-17 08:40:25
+ */
 
 // Inkluderer database-tilkoblingsfilen
-include 'connect.php';
+include '../connect.php';
 
 // Sjekker om kunde_id er sendt via GET
 if(isset($_GET['kunde_id']))
@@ -31,7 +37,7 @@ if(isset($_GET['kunde_id']))
     </head>
     <body>
         <!-- Inkluderer meny-filen -->
-        <?php include 'menu.php'; ?>
+        <?php include '../menu.php'; ?>
         
         <!-- Header-seksjon -->
         <header>
@@ -51,8 +57,8 @@ if(isset($_GET['kunde_id']))
         <label for="telefonnummer">Telefonnummer</label>
         <input type="text" name="telefonnummer" id="telefonnummer" value="<?php echo htmlspecialchars($kunder['telefonnummer']); ?>" required> <br><br>
 
-        <label for="epost">E-post</label>
-        <input type="text" name="epost" id="epost" value="<?php echo htmlspecialchars($kunder['epost']); ?>" required> <br><br>
+        <label for="mail">E-post</label>
+        <input type="text" name="mail" id="mail" value="<?php echo htmlspecialchars($kunder['mail']); ?>" required> <br><br>
 
         <label for="adresse">Adresse</label>
         <input type="text" name="adresse" id="adresse" value="<?php echo htmlspecialchars($kunder['adresse']); ?>" required> <br><br>

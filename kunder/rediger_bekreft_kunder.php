@@ -1,7 +1,13 @@
 <?php
+/**
+ * @Author: phantom-ghost-web
+ * @Date:   2026-03-03 20:17:30
+ * @Last Modified by:   phantom-ghost-web
+ * @Last Modified time: 2026-03-17 08:40:25
+ */
 
 // Inkluderer database-tilkoblingsfilen
-include 'connect.php';
+include '../connect.php';
 
 // Sjekker om skjemaet for redigering er sendt
 if(isset($_GET['kunder_edit']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
@@ -10,13 +16,13 @@ if(isset($_GET['kunder_edit']) && ($_SERVER['REQUEST_METHOD'] === 'GET'))
         $kunde_id = $_GET['kunde_id'];
         $bedriftnavn = $_GET['bedriftnavn'];
         $telefonnummer = $_GET['telefonnummer'];
-        $epost = $_GET['epost'];
+        $mail = $_GET['mail'];
         $adresse = $_GET['adresse'];
         $postnummer = $_GET['postnummer'];
         $by = $_GET['by'];
 
         // Oppdaterer kunde-data i databasen
-    $sql = "UPDATE kunder SET bedriftnavn = :bedriftnavn, telefonnummer = :telefonnummer, epost = :epost, adresse = :adresse, postnummer = :postnummer, by = :by
+    $sql = "UPDATE kunder SET bedriftnavn = :bedriftnavn, telefonnummer = :telefonnummer, mail = :mail, adresse = :adresse, postnummer = :postnummer, by = :by
             WHERE kunde_id = :kunde_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":kunde_id",$kunde_id);

@@ -1,7 +1,15 @@
 <?php
+/**
+ * @Author: phantom-ghost-web
+ * @Date:   2026-03-03 22:02:27
+ * @Last Modified by:   phantom-ghost-web
+ * @Last Modified time: 2026-03-17 08:40:25
+ */
+
+
 
 // Inkluderer database-tilkoblingsfilen
-include 'connect.php';
+include '../connect.php';
 
 // Sjekker om kunde_id er sendt via GET
 if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
@@ -30,7 +38,7 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
 </head>
 <body>
     <!-- Inkluderer meny-filen -->
-    <?php include 'menu.php'; ?>
+    <?php include '../menu.php'; ?>
 
     <!-- Header-seksjon -->
     <header>
@@ -50,8 +58,8 @@ if(isset($_GET['kunde_id']) AND ($_SERVER['REQUEST_METHOD'] == 'GET'))
         <label for="telefonnummer">Telefonnummer</label> <br>
         <input type="text" name="telefonnummer" id="telefonnummer" value="<?php echo htmlspecialchars($kunde['telefonnummer']); ?>" readonly required> <br><br>
 
-        <label for="epost">E-post</label> <br>
-        <input type="email" name="epost" id="epost" value="<?php echo htmlspecialchars($kunde['epost']); ?>" readonly required> <br><br>
+        <label for="mail">E-post</label> <br>
+        <input type="email" name="mail" id="mail" value="<?php echo htmlspecialchars($kunde['mail']); ?>" readonly required> <br><br>
 
         <label for="adresse">Adresse</label> <br>
         <input type="text" name="adresse" id="adresse" value="<?php echo htmlspecialchars($kunde['adresse']); ?>" readonly required> <br><br>

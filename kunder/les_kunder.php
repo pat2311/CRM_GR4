@@ -1,4 +1,10 @@
 <?php
+/**
+ * @Author: phantom-ghost-web
+ * @Date:   2026-03-03 9:29:35
+ * @Last Modified by:   phantom-ghost-web
+ * @Last Modified time: 2026-03-17 08:40:25
+ */
 
 // Inkluderer database-tilkoblingsfilen for å koble til databasen
 include "../connect.php";
@@ -20,7 +26,7 @@ foreach($CRM_GR4 as $kunder)
         echo "kunde ID: " . $kunder['kunde_id'] . "<br>";
         echo "Bedrift navn: " . $kunder['bedriftnavn'] . "<br>";
         echo "Telefonnummer: " . $kunder['telefonnummer'] . "<br>";
-        echo "Email: " . $kunder['epost'] . "<br>";
+        echo "mail: " . $kunder['mail'] . "<br>";
         echo "Adresse: " . $kunder['adresse'] . "<br><br>";
         echo "Postnummer: " . $kunder['postnummer'] . "<br>";
         echo "By: " . $kunder['by'] . "<br><br>";
@@ -69,7 +75,7 @@ foreach($CRM_GR4 as $kunder)
                         <td><?php echo $kunder['kunde_id']; ?></td>
                         <td><?php echo $kunder['bedriftnavn']; ?></td>
                         <td><?php echo $kunder['telefonnummer']; ?></td>
-                        <td><?php echo $kunder['epost']; ?></td>
+                        <td><?php echo $kunder['mail']; ?></td>
                         <td><?php echo $kunder['adresse']; ?></td>
                         <td><?php echo $kunder['postnummer']; ?></td>
                         <td><?php echo $kunder['by']; ?></td>

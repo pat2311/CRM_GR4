@@ -1,7 +1,13 @@
 <?php
+/**
+ * @Author: phantom-ghost-web
+ * @Date:   2026-03-03 15:50:41
+ * @Last Modified by:   phantom-ghost-web
+ * @Last Modified time: 2026-03-17 08:40:25
+ */
 
 // Inkluderer database-tilkoblingsfilen for å koble til databasen
-include "connect.php";
+include "../connect.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +21,7 @@ include "connect.php";
 <body>
 
 <!-- Inkluderer meny-filen for navigasjon -->
-<?php include 'menu.php'?>
+<?php include '../meny.php'?>
 
 <!-- Header-seksjon med beskrivelse av siden -->
 <header>
@@ -35,8 +41,8 @@ include "connect.php";
 <label for="telefonnummer">Telefonnummer:</label><br>
 <input type="text" id="telefonnummer" name="telefonnummer"><br>
 
-<label for="epost">E-post/mail:</label><br>
-<input type="text" id="epost" name="epost"><br>
+<label for="mail">E-post/mail:</label><br>
+<input type="text" id="mail" name="mail"><br>
 
 <label for="adresse">Adresse:</label><br>
 <input type="text" id="adresse" name="adresse"><br>
