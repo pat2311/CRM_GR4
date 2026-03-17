@@ -13,7 +13,6 @@ include "../connect.php";
 if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
     {
         // Henter data fra GET-parametere
-        $kunde_id = $_GET['kunde_id'];
         $bedriftnavn = $_GET['bedriftnavn'];
         $telefonnummer = $_GET['telefonnummer'];
         $mail = $_GET['mail'];
@@ -35,11 +34,10 @@ if(isset($_GET['kunder_new']) && ($_SERVER['REQUEST_METHOD'] == 'GET'))
         // Hvis kunden ikke finnes, legg til ny
         if(!$kunde)
             {
-            $sql = "INSERT INTO kunder (kunde_id, bedriftnavn, telefonnummer, mail, adresse, postnummer, by)
-            VALUES (:kunde_id, :bedriftnavn, :telefonnummer, :mail, :adresse, :postnummer, :by)";
+            $sql = "INSERT INTO kunder (bedriftnavn, telefonnummer, mail, adresse, postnummer, by)
+            VALUES (:bedriftnavn, :telefonnummer, :mail, :adresse, :postnummer, :by)";
 
             $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':kunde_id', $kunde_id);
             $stmt->bindParam(':bedriftnavn', $bedriftnavn);
             $stmt->bindParam(':telefonnummer', $telefonnummer);
             $stmt->bindParam(':mail', $mail);
