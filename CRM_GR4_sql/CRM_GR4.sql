@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `CRM_GR4`.`Ansatte` (
   `navn` VARCHAR(50) NULL,
   `etternavn` VARCHAR(50) NULL,
   `telefonnummer` VARCHAR(30) NULL,
-  `mail` VARCHAR(100) NULL,
+  `epost` VARCHAR(100) NULL,
   `rolle` VARCHAR(50) NULL,
   PRIMARY KEY (`ansatt_id`))
 ENGINE = InnoDB;
@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `CRM_GR4`.`Kunder` (
   `kunde_id` INT NOT NULL AUTO_INCREMENT,
   `bedriftnavn` VARCHAR(100) NULL,
   `telefonnummer` VARCHAR(30) NULL,
-  `mail` VARCHAR(100) NULL,
+  `epost` VARCHAR(100) NULL,
   `adresse` VARCHAR(100) NULL,
   `postnummer` VARCHAR(10) NULL,
-  `by` VARCHAR(50) NULL,
+  `city` VARCHAR(50) NULL,
   PRIMARY KEY (`kunde_id`))
 ENGINE = InnoDB;
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `CRM_GR4`.`Kontaktperson` (
   `etternavn` VARCHAR(50) NULL,
   `stilling` VARCHAR(60) NULL,
   `telefonnummer` VARCHAR(30) NULL,
-  `mail` VARCHAR(100) NULL,
+  `epost` VARCHAR(100) NULL,
   `kunde_id` INT NOT NULL,
   PRIMARY KEY (`kontakt_id`, `kunde_id`),
   INDEX `fk_Kontaktperson_Kunder_idx` (`kunde_id` ASC),
