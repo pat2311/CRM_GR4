@@ -30,7 +30,7 @@ include "../connect.php";
 
 <!-- Hovedinnhold med skjema for å legge til ny kunde -->
 <main>
-<form action="kunder_ny_bekreft.php" method="get">
+<form action="ny_bekreft_kunder.php" method="get">
 
 <label for="kunde_id">Kunde ID:</label><br>
 <input type="text" id="kunde_id" name="kunde_id"><br>
