@@ -1,9 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=rect&height=231&color=gradient&text=UV%20gruppeoppgave:%20CRM-system%20(CRUD)&fontAlign=50&fontSize=27)
 
-<p align="center">
-🌈 This is an example sentence that is the color of the rainbow 🌈
-</p>
-
 ---
 
 ## 📌 Om prosjektet
@@ -20,7 +16,7 @@ Målet er å bygge bedre kunderelasjoner og øke salget.
 
 ---
 
-## 🏢 Oppgave
+##  Oppgave
 
 Dere skal utvikle et CRM-system for **FRISK AS**.
 
@@ -31,7 +27,7 @@ Systemet skal:
 
 ---
 
-## 👥 Arbeidsfordeling
+##  Arbeidsfordeling
 
 
 | Navn | Ansvar          |
@@ -42,7 +38,7 @@ Systemet skal:
 |elis   |back end        |
 ---
 
-## 📋 Kravspesifikasjon
+##  Kravspesifikasjon
 
 Start med å lage en detaljert kravspesifikasjon.
 
@@ -53,7 +49,7 @@ Den må inneholde:
 
 ---
 
-## 🛠️ Teknologi
+##  Teknologi
 
 - PHP  
 - MySQL  
@@ -62,7 +58,7 @@ Den må inneholde:
 
 ---
 
-## 🔄 Funksjonalitet (CRUD)
+##  Funksjonalitet (CRUD)
 
 Systemet skal støtte:
 
@@ -71,15 +67,8 @@ Systemet skal støtte:
 - **Update** – redigere data  
 - **Delete** – slette data  
 
----
 
-## 📅 Fremdriftsplan
-
-> Legg inn deres egen plan her
-
----
-
-## 🧩 Database
+##  Database
 
 - Lages i MySQL Workbench  
 - Navn: `CRM_GR#`  
@@ -87,7 +76,7 @@ Systemet skal støtte:
 
 ---
 
-## 📦 Innlevering
+##  Innlevering
 
 1. Link til webhotell  
 2. Kravspesifikasjon  
