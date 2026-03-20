@@ -53,6 +53,21 @@ nav a:hover {
     background-color: #6D435A;           /* Mauve Shadow */
     transform: translateY(-3px);
 }
+
+/* ================ Main ================ */
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #000000;
+    background-color: #B1EDE8;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}    
  
 /* ================ HEADER ================ */
 header {
@@ -129,7 +144,15 @@ input[type="submit"]:hover {
     transform: scale(1.05);
 }
  
-/* Feilmelding */
+#rediger {
+    background-color: #ffe5e5;
+    color: #6D435A;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 6px solid #FF6978;
+    margin: 2rem 0;
+}
+
 #slett {
     background-color: #ffe5e5;
     color: #6D435A;
@@ -157,11 +180,13 @@ th {
     padding: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border-style:inset;
 }
  
 td {
     padding: 1.1rem 1.3rem;
     border-bottom: 1px solid #eee;
+    border-style:inset;
 }
  
 tr:nth-child(even) {
