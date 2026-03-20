@@ -35,12 +35,12 @@ Systemet skal:
 
 > Dette skal fylles ut av gruppen
 
-| Navn | Ansvar |
-|------|--------|
-|      |        |
-|      |        |
-|      |        |
-
+| Navn | Ansvar          |
+|-------|----------------|
+|patrik |arbeidsfordeling|
+|midas  |css             |
+|seb    |front end       |
+|elis   |back end        |
 ---
 
 ## 📋 Kravspesifikasjon
@@ -106,6 +106,3 @@ Systemet skal støtte:
 
 ---
 
-<p align="center">
-⭐ Lykke til med prosjektet! ⭐
-</p>
