@@ -33,7 +33,6 @@ Systemet skal:
 
 ## 👥 Arbeidsfordeling
 
-> Dette skal fylles ut av gruppen
 
 | Navn | Ansvar          |
 |-------|----------------|
